@@ -11,18 +11,19 @@ import java.awt.event.ActionListener;
  */
 public class ActionBoton implements ActionListener{
 
-	
+	private VentanaPrincipal ventana;
 
-	public ActionBoton() {
-		//TODO
+	public ActionBoton(VentanaPrincipal v) {
+		ventana = v;
 	}
 	
 	/**
 	 *Acción que ocurrirá cuando pulsamos uno de los botones.
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		//TODO
+	public void actionPerformed(ActionEvent e)
+	{
+		
 	}
 
 }
