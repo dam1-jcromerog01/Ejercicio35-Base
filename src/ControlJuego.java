@@ -13,13 +13,13 @@ import java.util.Random;
 public class ControlJuego {
 	
 	private final static int MINA = -1;
-	final int MINAS_INICIALES = 1;
+	final int MINAS_INICIALES = 20;
 	final int LADO_TABLERO = 10;
 
 	private int [][] tablero;
 	private int puntuacion;
 	
-	private int casillasAbiertas = 0;
+	private int casillasAbiertas;
 	
 	public ControlJuego() {
 		//Creamos el tablero:
@@ -36,7 +36,7 @@ public class ControlJuego {
 	 */
 	public void inicializarPartida(){
 		puntuacion = 0;
-
+		casillasAbiertas = 0;
 		//Posicionar las minas
 		for (int i = 0; i < MINAS_INICIALES; i++)
 		{
@@ -117,7 +117,7 @@ public class ControlJuego {
 	 * @return Devuelve verdadero si se han abierto todas las celdas que no son minas.
 	 **/
 	public boolean esFinJuego(){
-		if (casillasAbiertas<(Math.sqrt(LADO_TABLERO))-MINAS_INICIALES-1)
+		if (casillasAbiertas>=((Math.pow(LADO_TABLERO, 2)-MINAS_INICIALES)))
 		{
 			return true;
 		}
@@ -136,7 +136,7 @@ public class ControlJuego {
 			}
 			System.out.println();
 		}
-		System.out.println("\nPuntuaciÃ³n: "+puntuacion);
+		System.out.println("\nPuntuación: "+puntuacion);
 	}
 
 	/**
